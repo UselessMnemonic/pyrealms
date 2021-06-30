@@ -12,12 +12,6 @@ if __name__ == '__main__':
         uuid = profile.id
         rs = realms.RealmsSession(access_token, name, uuid, "1.17.0")
 
-        res = realms.GetWorldsRequest().send(rs)
-        print(res)
-
         res = realms.GetWorldRequest(9193751).send(rs)
-        print(res)
-
-        res = realms.GetWorldBackupsRequest(9193751).send(rs)
-        print(res)
+        print(res.server.players)
 
